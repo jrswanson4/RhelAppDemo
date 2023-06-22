@@ -23,12 +23,10 @@
       state: present 
 
   - name: install npm
-    ansible.builtin.shell: npm install
-    args:
-      chdir: /home/ec2-user/DemoApp
+    ansible.builtin.command: chdir=/home/ec2-user/DemoApp npm install
+    
 
   - name: Start application
-    ansible.builtin.shell: npm start
-    args:
-      chdir: /home/ec2-user/DemoApp 
+    ansible.builtin.command: chdir=/home/ec2-user/DemoApp npm start 
+    
 
