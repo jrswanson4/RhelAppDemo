@@ -17,7 +17,18 @@
       clone: yes
       update: yes 
 
-  - name: install npm
+  - name: install node
     ansible.builtin.dnf:
       name: nodejs
       state: present 
+
+  - name: install npm
+    ansible.builtin.shell: npm install
+      args:
+        chdir: /home/ec2-user/DemoApp
+
+  - name: Start application
+    ansible.builtin.shell: npm start
+      args:
+        chdir: /home/ec2-user/DemoApp 
+
