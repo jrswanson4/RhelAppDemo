@@ -13,6 +13,6 @@
   - name: Clone git repo
     ansible.builtin.git:
       repo: https://github.com/jrswanson4/Summit_Kiosk_Site.git 
-      dest: /home/ec2-user/DemoProject
+      dest: /home/ec2-user/DemoApp
       clone: yes
       update: yes  
