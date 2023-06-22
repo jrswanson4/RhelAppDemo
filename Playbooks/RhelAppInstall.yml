@@ -15,4 +15,9 @@
       repo: https://github.com/jrswanson4/Summit_Kiosk_Site.git 
       dest: /home/ec2-user/DemoApp
       clone: yes
-      update: yes  
+      update: yes 
+
+  - name: install npm
+    ansible.builtin.dnf:
+      name: nodejs
+      state: present 
