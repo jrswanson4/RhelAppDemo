@@ -5,7 +5,14 @@
 
   tasks:
 
+  - name: intsall git
+    ansible.builtin.dnf:
+      name: git
+      state: present
+
   - name: Clone git repo
     ansible.builtin.git:
       repo: https://github.com/jrswanson4/RhelAppDemo.git 
       dest: /home/ec2-user/DemoProject
+      clone: yes
+      update: yes
