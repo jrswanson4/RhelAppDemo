@@ -1,0 +1,21 @@
+---
+# tasks file for RhelAppDemoRole
+- name: intsall git
+  ansible.builtin.dnf:
+    name: git
+    state: present
+
+- name: Clone git repo
+  ansible.builtin.git:
+    repo: https://github.com/jrswanson4/Summit_Kiosk_Site.git 
+    dest: /home/ec2-user/DemoApp
+    clone: yes
+    update: yes 
+
+- name: install node
+  ansible.builtin.dnf:
+    name: nodejs
+    state: present 
+
+- name: install npm
+  ansible.builtin.command: chdir=/home/ec2-user/DemoApp npm install
