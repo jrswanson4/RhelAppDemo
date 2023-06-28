@@ -23,7 +23,7 @@
       state: present 
 
   - name: install npm
-    ansible.builtin.command: chdir=/home/ec2-user/DemoApp npm install
+    ansible.builtin.command: chdir=/home/ec2-user/DemoApp sudo npm install
     
 
 
