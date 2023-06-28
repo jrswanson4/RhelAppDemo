@@ -24,6 +24,10 @@
 
   - name: install npm
     ansible.builtin.command: chdir=/home/ec2-user/DemoApp sudo npm install
+
+  - name: check connections
+    ansible.builtin.uri:
+      url: http://localhost:3000
     
 
 
