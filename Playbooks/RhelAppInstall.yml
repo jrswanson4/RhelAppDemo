@@ -27,8 +27,8 @@
 
   - name: start app
     ansible.builtin.command: chdir=/home/ec2-user/DemoApp sudo npm start
-      async: 30
-      poll: 5
+    async: 30
+    poll: 5 
 
   - name: check connection
     ansible.builtin.uri:
