@@ -45,7 +45,8 @@
       url: http://localhost:3000
     until: uri_ouput.status == 200
     retries: 12
-    delay: 5    
+    delay: 5  
+    register: uri_ouput  
 
   
     
