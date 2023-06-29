@@ -27,7 +27,7 @@
 
   - name: create service
     template:
-      src: ./Templates/RhelAppDemo.service.j2
+      src: /Templates/RhelAppDemo.service.j2 
       dest: /lib/systemd/system/RhelAppDemo.service
   
   - name: set SElinux permission
