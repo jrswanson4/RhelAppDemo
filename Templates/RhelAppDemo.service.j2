@@ -1,0 +1,7 @@
+[Unit]
+Description=RhelAppDemo service
+After=network.target
+
+[Service]
+WorkingDirectory=/home/ec2-user/DemoApp
+ExecStart=npm start

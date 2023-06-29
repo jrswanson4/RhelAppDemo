@@ -25,14 +25,23 @@
   - name: install npm
     ansible.builtin.command: chdir=/home/ec2-user/DemoApp sudo npm install
 
-  - name: start app
-    ansible.builtin.command: chdir=/home/ec2-user/DemoApp sudo npm start
-    async: 60
+  - name: create service
+    template:
+      src: ./Templates/RhelAppDemo.service.j2
+      dest: /lib/systemd/system/RhelAppDemo.service
+  
+  - name: set SElinux permission
+    ansible.posix.selinux:
+      state: permissive
+  
+  - name: start application
+    ansible.builtin.systemd:
+      name: RhelAppDemo
+      state: started 
     
-
   - name: check connection
     ansible.builtin.uri:
-      url: http://localhost:3000 
+      url: http://localhost:3000  
 
   
     
