@@ -27,8 +27,8 @@
 
   - name: create service
     template:
-      src: /Templates/RhelAppDemo.service.j2 
-      dest: /lib/systemd/system/RhelAppDemo.service
+      src: Templates/RhelAppDemo.service.j2 
+      dest: /lib/systemd/system/RhelAppDemo.service 
   
   - name: set SElinux permission
     ansible.posix.selinux:
