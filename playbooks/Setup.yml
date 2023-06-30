@@ -14,4 +14,11 @@
       state: stopped
 
   - name: remove the service
-    ansible.builtin.command: chdir=/lib/systemd/system/ rm RhelAppDemo.service 
+    ansible.builtin.command: chdir=/lib/systemd/system/ rm RhelAppDemo.service
+
+  - name: remove git and node
+    ansible.builtin.dnf:
+      name:
+        - nodejs
+        - git
+      state: absent
