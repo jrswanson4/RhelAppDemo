@@ -1,0 +1,28 @@
+---
+- name: Install and start application
+  hosts: Rhel
+  become: true
+
+  tasks:
+
+  - name: update code
+    ansible.builtin.git:
+      repo: https://github.com/jrswanson4/Summit_Kiosk_Site.git 
+      dest: /home/ec2-user/DemoApp
+      clone: no
+      update: yes
+
+  - name: reload service
+    ansible.builtin.systemd:
+      name: RhelAppDemo
+      state: reloaded
+
+  - name: check connection
+    ansible.builtin.uri:
+      url: http://localhost:3000
+    until: uri_ouput.status == 200
+    retries: 12
+    delay: 5  
+    register: uri_ouput  
+
+
