@@ -16,7 +16,7 @@
   - name: reload service
     ansible.builtin.systemd:
       name: RhelAppDemo
-      state: reloaded
+      state: restarted
 
   - name: check connection
     ansible.builtin.uri:
