@@ -11,6 +11,7 @@
       dest: /home/ec2-user/DemoApp
       clone: no
       update: yes
+      force: yes 
 
   - name: reload service
     ansible.builtin.systemd:
