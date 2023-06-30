@@ -1,0 +1,17 @@
+---
+- name: Setup VM
+  hosts: Rhel
+  become: true
+
+  tasks:
+
+  - name: remove git repo from machine
+    ansible.builtin.command: chdir=/home/ec2-user sudo rm -rf DemoApp
+
+  - name: stop the app service
+    ansible.builtin.systemd:
+      name: RhelAppDemo
+      state: stopped
+
+  - name: remove the service
+    ansible.builtin.command: chdir=/lib/systemd/system/ rm RhelAppDemo.service 
