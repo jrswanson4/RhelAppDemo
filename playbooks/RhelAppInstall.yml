@@ -5,7 +5,7 @@
 
   tasks:
 
-  - name: intsall git
+  - name: install git
     ansible.builtin.dnf:
       name: git
       state: present
