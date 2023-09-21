@@ -4,6 +4,6 @@
 
   tasks:
 
-  - name: Check connection
+  - name: check connection
     ansible.builtin.uri:
       url: http://localhost:3000
