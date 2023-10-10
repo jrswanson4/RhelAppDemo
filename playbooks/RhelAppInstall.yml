@@ -30,7 +30,7 @@
       src: ../templates/RhelAppDemo.service.j2 
       dest: /lib/systemd/system/RhelAppDemo.service 
   
-  - name: set SElinux permission
+  - name: Set SElinux permission
     ansible.posix.selinux:
       policy: targeted
       state: permissive
