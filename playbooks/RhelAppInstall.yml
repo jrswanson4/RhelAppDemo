@@ -25,7 +25,7 @@
   - name: Install npm
     ansible.builtin.command: chdir=/home/ec2-user/DemoApp sudo npm install
 
-  - name: create service
+  - name: Create service
     ansible.builtin.template:
       src: ../templates/RhelAppDemo.service.j2 
       dest: /lib/systemd/system/RhelAppDemo.service 
