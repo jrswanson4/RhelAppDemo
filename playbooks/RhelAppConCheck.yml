@@ -1,6 +1,6 @@
 - name: Install and start application
   hosts: Rhel
-  become: true
+  become: True
 
   tasks:
 
