@@ -5,7 +5,7 @@
 
   tasks:
 
-  - name: install git
+  - name: Install git
     ansible.builtin.dnf:
       name: git
       state: present
@@ -17,12 +17,12 @@
       clone: yes
       update: yes 
 
-  - name: install node
+  - name: Install node
     ansible.builtin.dnf:
       name: nodejs
       state: present 
 
-  - name: install npm
+  - name: Install npm
     ansible.builtin.command: chdir=/home/ec2-user/DemoApp sudo npm install
 
   - name: create service
