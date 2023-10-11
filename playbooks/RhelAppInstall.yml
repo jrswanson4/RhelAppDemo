@@ -40,7 +40,7 @@
       name: RhelAppDemo
       state: started 
     
-  - name: check connection
+  - name: Check connection
     ansible.builtin.uri:
       url: http://localhost:3000
     until: uri_ouput.status == 200
