@@ -35,7 +35,7 @@
       policy: targeted
       state: permissive
   
-  - name: start application
+  - name: Start application
     ansible.builtin.systemd:
       name: RhelAppDemo
       state: started 
