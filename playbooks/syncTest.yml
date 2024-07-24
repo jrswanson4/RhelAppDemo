@@ -8,5 +8,5 @@
       ansible.posix.synchronize:
         src: /root/HelloWorld
         dest: /root/HelloWorld
-      delegate_to: 3.140.196.57
+      delegate_to: 13.58.9.124
         
