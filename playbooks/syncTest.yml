@@ -7,6 +7,6 @@
     - name: sync files
       ansible.posix.synchronize:
         src: /root/HelloWorld
-        dest: rsync://3.140.196.57/root/HelloWorld
+        dest: rsync://10.0.4.112/root/HelloWorld
       delegate_to: 13.58.9.124
         
