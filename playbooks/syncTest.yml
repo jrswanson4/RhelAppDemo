@@ -1,0 +1,12 @@
+---
+- name: Test using sync for file pull
+  hosts: all
+  become: true
+
+  tasks:
+    - name: sync files
+      ansible.posix.synchronize:
+        src: /root/HelloWorld
+        dest: /root/HelloWorld
+      delegate_to: 3.140.196.57
+        
