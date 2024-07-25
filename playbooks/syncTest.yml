@@ -6,6 +6,7 @@
   tasks:
     - name: sync files
       ansible.posix.synchronize:
+        mode: pull
         src: /root/HelloWorld
         dest: ~/HelloWorld
       delegate_to: 13.58.9.124
